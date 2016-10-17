@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="store">
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+  <!-- Concatenated CSS -->
+  <link href="/dest/lib.css?rev=7b34783481b87b83afa373d828f3ff0a" rel="stylesheet">
+  <link href="/dest/app.css?rev=84d9e939bd183f985e8eabf5fafa6e1a" rel="stylesheet">
+</head>
+<body ng-controller="StoreController as store">
+<ul class="list-group">
+  <li class="list-group-item" ng-repeat="product in store.products">
+  <h3>
+    {{product.name}}
+    <em class="pull-right">{{product.price |currency}}</em>
+    <button ng-show="product.canPurchase">
+      Add to Cart
+    </button>
+  </h3>
+  <section ng-controller="PanelController as panel">
+    <ul class="nav nav-pills">
+      <li ng-class="{active:panel.isSelected(1)}">
+        <a href ng-click="panel.selectTab(1)">Description</a>
+      </li>
+      <li ng-class="{active:panel.isSelected(2)}">
+        <a href ng-click="panel.selectTab(2)">Description</a>
+      </li>
+      <li ng-class="{active:panel.isSelected(3)}">
+        <a href ng-click="panel.selectTab(3)">Description</a>
+      </li>
+    </ul>
+
+    <div class="panel" ng-show="panel.isSelected(1)">
+      <h4>Description</h4>
+      <p>
+        {{product.description}}
+      </p>
+    </div>
+
+    <div class="panel" ng-show="panel.isSelected(2)">
+      <h4>Specifications</h4>
+      <blockquote>None yet</blockquote>
+    </div>
+
+    <div class="panel" ng-show="panel.isSelected(3)">
+      <h4>Reviews</h4>
+      <blockquote ng-repeat="review in product.reviews">
+        <b>Stars:{{review.stars}}</b>
+        {{review.body}}
+        <cite>by: {{review.author}}</cite>
+      </blockquote>
+      <h4>Submit a Review</h4>
+        <select ng-model="$parent.review.stars" ng-options="stars for stars in [5,4,3,2,1]" title="Stars">
+          <option value="">Rate the Product</option>
+        </select>
+      <fieldset class="form-group">
+        <textarea ng-model="review.body"></textarea>
+      </fieldset>
+      <fieldset class="form-group">
+        <input ng-model="review.author" type="email" class="form-control" placeholder="jimmyDean@example.org" title="Email" />
+      </fieldset>
+      <fieldset class="form-group">
+        <input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
+      </fieldset>
+    </div>
+  </section>
+  <li>
+</ul>
+<!-- Concatenated libraries -->
+<script src="/dest/lib.js?rev=ba60f2bb24e24a0ffed32db072b1f620"></script>
+<!-- Concatenated application -->
+<script src="/dest/src.js?rev=104c123e57fb6b4129d58271007fd27b"></script>
+<!-- All html templates -->
+<script src="/dest/templates.js?rev=0b666c86a77ef7f0b7a79febe0b443a2"></script>
+</body>
+</html>

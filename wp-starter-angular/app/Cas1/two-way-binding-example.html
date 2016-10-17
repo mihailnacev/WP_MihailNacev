@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Two way binding</title>
+</head>
+<body>
+<div ng-controller="FirstController as vm" ng-init="to='Mihail'">
+  <div class="col-lg-4 col-sm-offset-1">
+    <input class="form-control" type="text" ng-model="to"/>
+  </div>
+  <div class="col-lg-4" ng-click="helloDivClicked()">
+   Hello {{to}}
+    <div class="col-lg-2">
+      <button class="btn btn-primary btn-xs"
+              ng-click="vm.clearTo()">
+        <i class="fa fa-fw fa-refresh"></i>
+      </button>
+    </div>
+  </div>
+
+  <div class="col-lg-12" ng-click="vm.helloDivClicked()">
+    <hr/>
+    {{name}} ||| {{vm}}
+  </div>
+
+</div>
+
+<div ng-controller="SecondController as vm">
+  Hello {{vm.to}}!
+  <hr/>
+  {{vm.name}}
+  <hr/>
+  {{vm}}
+</div>
+</div>
+
+<div ng-init="qty='1';cost='2'">
+  <b>Invoice:</b>
+  <div>
+    Quantity: <input type="number" min="0" ng-model="qty">
+  </div>
+  <div>
+    Costs: <input type="number" min="0" ng-model="cost">
+  </div>
+  <div>
+    <b>Total:</b> {{qty * cost | currency}}
+  </div>
+</div>
+</body>
+</html>

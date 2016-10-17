@@ -1,0 +1,58 @@
+<ul class="list-group">
+  <li class="list-group-item" ng-repeat="product in vm.products">
+    <h3>
+      {{product.name}}
+      <em class="pull-right">{{product.price |currency}}</em>
+      <button ng-show="product.canPurchase">
+        Add to Cart
+      </button>
+    </h3>
+    <section>
+      <ul class="nav nav-pills">
+        <li ng-class="{active:vm.isSelected(1)}">
+          <a href ng-click="vm.selectTab(1)">Description</a>
+        </li>
+        <li ng-class="{active:vm.isSelected(2)}">
+          <a href ng-click="vm.selectTab(2)">Description</a>
+        </li>
+        <li ng-class="{active:vm.isSelected(3)}">
+          <a href ng-click="vm.selectTab(3)">Description</a>
+        </li>
+      </ul>
+
+      <div class="panel" ng-show="vm.isSelected(1)">
+        <h4>Description</h4>
+        <p>
+          {{product.description}}
+        </p>
+      </div>
+
+      <div class="panel" ng-show="vm.isSelected(2)">
+        <h4>Specifications</h4>
+        <blockquote>None yet</blockquote>
+      </div>
+
+      <div class="panel" ng-show="vm.isSelected(3)">
+        <h4>Reviews</h4>
+        <blockquote ng-repeat="review in product.reviews">
+          <b>Stars:{{review.stars}}</b>
+          {{review.body}}
+          <cite>by: {{review.author}}</cite>
+        </blockquote>
+        <h4>Submit a Review</h4>
+        <select ng-model="$parent.review.stars" ng-options="stars for stars in [5,4,3,2,1]" title="Stars">
+          <option value="">Rate the Product</option>
+        </select>
+        <fieldset class="form-group">
+          <textarea ng-model="review.body"></textarea>
+        </fieldset>
+        <fieldset class="form-group">
+          <input ng-model="review.author" type="email" class="form-control" placeholder="jimmyDean@example.org" title="Email" />
+        </fieldset>
+        <fieldset class="form-group">
+          <input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
+        </fieldset>
+      </div>
+    </section>
+  </li>
+</ul>
