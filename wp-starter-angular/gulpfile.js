@@ -64,6 +64,7 @@ var JS_LIB = [
     'bower_components/angular-ui-router/release/angular-ui-router.js',
     'bower_components/angular-ui-select/dist/select.js',
     'bower_components/angular-smart-table/dist/smart-table.js',
+    'bower_components/ngstorage/ngStorage.js'
 
 ];
 

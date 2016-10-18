@@ -9,12 +9,12 @@
     .module('wp-angular-starter')
     .factory('StudentsService',StudentsService);
 
-  StudentsService.$inject=['$log','$timeout','$q'];
+  StudentsService.$inject=['$log','$timeout','$q','$localStorage'];
 
   /* @ngInject */
-  function StudentsService($log,$timeout,$q){
+  function StudentsService($log,$timeout,$q,$localStorage){
 
-    var studentsList=[];
+    $localStorage.studentsList= $localStorage.studentsList || [];
     var studentsIdSequence=0;
 
     var service = {
@@ -36,7 +36,7 @@
           invalidMessage = validateStudent(studentEntity);
           if(invalidMessage===null){
             entityForSave.id=++studentsIdSequence;
-            studentsList.push(entityForSave);
+            $localStorage.studentsList.push(entityForSave);
             $log.debug('saving', entityForSave);
             deferred.resolve(entityForSave);
           }
@@ -95,7 +95,7 @@
           return defered.resolve(null);
         }
         else{
-          return defered.resolve(studentsList[index]);
+          return defered.resolve( $localStorage.studentsList[index]);
         }
       },100);
       return defered.promise;
@@ -105,7 +105,7 @@
       var defered=$q.defer();
       $timeout(function(){
         $log.debug('getAll');
-        defered.resolve(angular.copy(studentsList));
+        defered.resolve(angular.copy( $localStorage.studentsList));
       },100);
       return defered.promise;
     }
@@ -115,7 +115,7 @@
       $timeout(function(){
         var index = findIndexById(studentEntity.id);
         if (index !== -1) {
-          studentsList.splice(index, 1);
+          $localStorage.studentsList.splice(index, 1);
         }
         $log.debug('remove', studentEntity);
         defered.resolve();
@@ -127,8 +127,8 @@
       var result = -1, item;
 
       $log.debug('get index by id: ', groupId);
-      for (var i = 0; i < studentsList.length; i++) {
-        item = studentsList[i];
+      for (var i = 0; i <  $localStorage.studentsList.length; i++) {
+        item =  $localStorage.studentsList[i];
         if (item.id === groupId) {
           result = i;
           break;
