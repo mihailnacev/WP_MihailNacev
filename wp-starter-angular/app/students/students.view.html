@@ -31,7 +31,8 @@
 
     <div class="form-group">
       <label>Groups</label>
-      <ui-select ng-model="vm.entity.group"
+      <group-select wp-model="vm.entity.group" ng-cloak><group-select>
+      <!--<ui-select ng-model="vm.entity.group"
                  title="Choose group for a student">
         <ui-select-match
           placeholder="Choose group for a student...">
@@ -42,7 +43,7 @@
           position="auto">
           {{item.name}}
         </ui-select-choices>
-      </ui-select>
+      </ui-select>-->
     </div>
   </div>
 

@@ -30,7 +30,8 @@ var JS_APP = [
   'app/default-page/default-page.state.js',
   'app/students/students.controller.js',
   'app/students/students.state.js',
-  'app/students/students.local.factory.js'
+  'app/students/students.local.factory.js',
+  'app/students/students.component.js'
 ];
 
 var TEMPLATES_SRC = [
