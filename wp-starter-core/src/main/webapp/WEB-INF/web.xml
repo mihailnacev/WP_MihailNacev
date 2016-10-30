@@ -24,6 +24,9 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
         <servlet-name>AddressInfo</servlet-name>
         <url-pattern>/AddressInfo.do</url-pattern>
     </servlet-mapping>
+    <listener>
+        <listener-class>mk.ukim.finki.wp.web.Listener</listener-class>
+    </listener>
 
     <!--
     <context-param>
