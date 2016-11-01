@@ -1,0 +1,11 @@
+﻿Лабораториска вежба бази на податоци
+Барање1. π pizza (σ gender='female'∧age>20 (Person⨝Person.name=Eats.name Eats))
+Барање2. π pizzeria (σ (name='Amy'∨name='Fay')∧price<10 (Serves⨝Eats))
+Барање3. (π pizzeria,pizza (σ (name='Amy'∨name='Fay')∧price<10 (Serves⨝Eats)))-((π pizzeria,pizza (σ (name='Amy')∧price<10 (Serves⨝Eats))) ∩ (π  pizzeria,pizza (σ (name='Fay')∧price<10 (Serves⨝Eats))))
+Барање4. ((π name Frequents)-(π name (σ pizzeria='Dominos' Frequents)))∩(π name (Eats⨝ (σ pizzeria='Dominos' Serves)))
+Барање5. (π pizzeria ((σ age>30 (Person⨝Eats))⨝Serves))
+Барање6. γ max(Person.age)->maxAge
+(σ pizza='mushroom' (Person⨝Eats))
+Барање7. ((π pizzeria (Person⨝Frequents))-(π pizzeria (σ gender='male' (Person⨝Frequents))))∪((π pizzeria (Person⨝Frequents))-(π pizzeria (σ gender='female' (Person⨝Frequents))))
+Барање8. π Serves.pizzeria ((γ min(price)->minprice 
+(σ pizza='pepperoni' Serves))⨝minprice=Serves.price Serves)
