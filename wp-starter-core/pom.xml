@@ -345,6 +345,15 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <compilerVersion>1.5</compilerVersion>
+                    <source>1.5</source>
+                    <target>1.5</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.0</version>
                 <configuration>
                     <compilerArguments>
@@ -416,7 +425,7 @@
                 <configuration>
                     <server>tomcat-development-server</server>
                     <port>8080</port>
-                    <path>/servlet-showcase</path>
+                    <path>/</path>
                     <uriEncoding>UTF-8</uriEncoding>
                     <systemProperties>
                         <JAVA_OPTS>-Xms1024m -Xmx2048m -XX:+DisableExplicitGC
