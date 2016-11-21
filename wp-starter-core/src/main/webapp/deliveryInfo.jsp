@@ -12,7 +12,7 @@
     <body>
 <h1>Delivery Info</h1>
     <form method="post"  action="/AddressInfo.do">
-     <span>Pizza size: <%= session.getAttribute("pizzaSize") %></span><br>
+     <span>Pizza size: <%= session.getAttribute("pizzaType") %></span><br>
     Name: <input type="text" name="name"><br>
     Address: <input type="text" name="address"><br>
     <input type="submit" value="Submit">
