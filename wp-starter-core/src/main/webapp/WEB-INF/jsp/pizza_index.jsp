@@ -11,6 +11,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/png">
     <title>PizzaIndex</title>
 </head>
 <body>
