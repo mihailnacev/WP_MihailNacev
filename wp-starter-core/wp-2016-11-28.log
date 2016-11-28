@@ -1,0 +1,116 @@
+2016-11-28 11:22:40,908 INFO [localhost-startStop-1] o.s.w.c.ContextLoader [ContextLoader.java:285] Root WebApplicationContext: initialization started
+2016-11-28 11:22:40,955 INFO [localhost-startStop-1] o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:510] Refreshing Root WebApplicationContext: startup date [Mon Nov 28 11:22:40 CET 2016]; root of context hierarchy
+2016-11-28 11:22:40,986 INFO [localhost-startStop-1] o.s.b.f.x.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/business-config.xml]
+2016-11-28 11:22:41,142 INFO [localhost-startStop-1] o.s.w.c.ContextLoader [ContextLoader.java:325] Root WebApplicationContext: initialization completed in 234 ms
+2016-11-28 11:22:41,158 INFO [localhost-startStop-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:485] FrameworkServlet 'dispatcherServlet': initialization started
+2016-11-28 11:22:41,158 INFO [localhost-startStop-1] o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:510] Refreshing WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Mon Nov 28 11:22:41 CET 2016]; parent: Root WebApplicationContext
+2016-11-28 11:22:41,158 INFO [localhost-startStop-1] o.s.b.f.x.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/mvc-core-config.xml]
+2016-11-28 11:22:41,189 INFO [localhost-startStop-1] o.s.b.f.x.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/mvc-view-config.xml]
+2016-11-28 11:22:41,314 WARN [localhost-startStop-1] o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:487] Exception encountered during context initialization - cancelling refresh attempt
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'groupController': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: mk.ukim.finki.wp.service.impl.GroupService mk.ukim.finki.wp.web.GroupController.service; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [mk.ukim.finki.wp.service.impl.GroupService] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1210) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:755) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757) ~[spring-context-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480) ~[spring-context-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:664) [spring-webmvc-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:630) [spring-webmvc-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:678) [spring-webmvc-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:549) [spring-webmvc-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:490) [spring-webmvc-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:136) [spring-webmvc-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at javax.servlet.GenericServlet.init(GenericServlet.java:160) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1280) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1193) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:1088) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:5176) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5460) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262) [na:1.7.0_79]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [na:1.7.0_79]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [na:1.7.0_79]
+	at java.lang.Thread.run(Thread.java:745) [na:1.7.0_79]
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: mk.ukim.finki.wp.service.impl.GroupService mk.ukim.finki.wp.web.GroupController.service; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [mk.ukim.finki.wp.service.impl.GroupService] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:561) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	... 29 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [mk.ukim.finki.wp.service.impl.GroupService] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoSuchBeanDefinitionException(DefaultListableBeanFactory.java:1301) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1047) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:942) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:533) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	... 31 common frames omitted
+2016-11-28 11:22:41,330 ERROR [localhost-startStop-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:498] Context initialization failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'groupController': Injection of autowired dependencies failed; nested exception is org.springframework.beans.factory.BeanCreationException: Could not autowire field: mk.ukim.finki.wp.service.impl.GroupService mk.ukim.finki.wp.web.GroupController.service; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [mk.ukim.finki.wp.service.impl.GroupService] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:334) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1210) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:537) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:476) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:303) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:299) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:194) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:755) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:757) ~[spring-context-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:480) ~[spring-context-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.configureAndRefreshWebApplicationContext(FrameworkServlet.java:664) ~[spring-webmvc-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:630) ~[spring-webmvc-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.createWebApplicationContext(FrameworkServlet.java:678) ~[spring-webmvc-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.initWebApplicationContext(FrameworkServlet.java:549) ~[spring-webmvc-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.initServletBean(FrameworkServlet.java:490) ~[spring-webmvc-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.web.servlet.HttpServletBean.init(HttpServletBean.java:136) [spring-webmvc-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at javax.servlet.GenericServlet.init(GenericServlet.java:160) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardWrapper.initServlet(StandardWrapper.java:1280) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardWrapper.loadServlet(StandardWrapper.java:1193) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardWrapper.load(StandardWrapper.java:1088) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardContext.loadOnStartup(StandardContext.java:5176) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5460) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:150) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1559) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1549) [tomcat-embed-core-7.0.47.jar:7.0.47]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:262) [na:1.7.0_79]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1145) [na:1.7.0_79]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:615) [na:1.7.0_79]
+	at java.lang.Thread.run(Thread.java:745) [na:1.7.0_79]
+Caused by: org.springframework.beans.factory.BeanCreationException: Could not autowire field: mk.ukim.finki.wp.service.impl.GroupService mk.ukim.finki.wp.web.GroupController.service; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [mk.ukim.finki.wp.service.impl.GroupService] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:561) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:331) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	... 29 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type [mk.ukim.finki.wp.service.impl.GroupService] found for dependency: expected at least 1 bean which qualifies as autowire candidate for this dependency. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoSuchBeanDefinitionException(DefaultListableBeanFactory.java:1301) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1047) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:942) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:533) ~[spring-beans-4.1.7.RELEASE.jar:4.1.7.RELEASE]
+	... 31 common frames omitted
+2016-11-28 11:23:14,304 INFO [localhost-startStop-1] o.s.w.c.ContextLoader [ContextLoader.java:285] Root WebApplicationContext: initialization started
+2016-11-28 11:23:14,350 INFO [localhost-startStop-1] o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:510] Refreshing Root WebApplicationContext: startup date [Mon Nov 28 11:23:14 CET 2016]; root of context hierarchy
+2016-11-28 11:23:14,382 INFO [localhost-startStop-1] o.s.b.f.x.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/business-config.xml]
+2016-11-28 11:23:14,553 INFO [localhost-startStop-1] o.s.w.c.ContextLoader [ContextLoader.java:325] Root WebApplicationContext: initialization completed in 249 ms
+2016-11-28 11:23:14,569 INFO [localhost-startStop-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:485] FrameworkServlet 'dispatcherServlet': initialization started
+2016-11-28 11:23:14,569 INFO [localhost-startStop-1] o.s.w.c.s.XmlWebApplicationContext [AbstractApplicationContext.java:510] Refreshing WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Mon Nov 28 11:23:14 CET 2016]; parent: Root WebApplicationContext
+2016-11-28 11:23:14,569 INFO [localhost-startStop-1] o.s.b.f.x.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/mvc-core-config.xml]
+2016-11-28 11:23:14,600 INFO [localhost-startStop-1] o.s.b.f.x.XmlBeanDefinitionReader [XmlBeanDefinitionReader.java:317] Loading XML bean definitions from class path resource [spring/mvc-view-config.xml]
+2016-11-28 11:23:14,787 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/api/groups/{id}],methods=[DELETE],produces=[application/json]}" onto public void mk.ukim.finki.wp.web.GroupController.delete(java.lang.Long)
+2016-11-28 11:23:14,787 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/api/groups/{id}],methods=[PUT],produces=[application/json]}" onto public void mk.ukim.finki.wp.web.GroupController.update(java.lang.Long,mk.ukim.finki.wp.model.Group)
+2016-11-28 11:23:14,787 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/api/groups],methods=[GET],produces=[application/json]}" onto public java.util.List<mk.ukim.finki.wp.model.Group> mk.ukim.finki.wp.web.GroupController.findAll()
+2016-11-28 11:23:14,787 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/api/groups/{id}],methods=[GET],produces=[application/json]}" onto public mk.ukim.finki.wp.model.Group mk.ukim.finki.wp.web.GroupController.findById(java.lang.Long)
+2016-11-28 11:23:14,787 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/],methods=[GET]}" onto public org.springframework.web.servlet.ModelAndView mk.ukim.finki.wp.web.PizzaOrderController.index()
+2016-11-28 11:23:14,787 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/by_user/{id}]}" onto public org.springframework.web.servlet.ModelAndView mk.ukim.finki.wp.web.PizzaOrderController.showClientInfo(int,java.lang.String,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws javax.servlet.ServletException,java.io.IOException
+2016-11-28 11:23:14,787 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerMapping [AbstractHandlerMethodMapping.java:217] Mapped "{[/order]}" onto public org.springframework.web.servlet.ModelAndView mk.ukim.finki.wp.web.PizzaOrderController.placeOrder(java.lang.String,java.lang.String,javax.servlet.http.HttpSession,javax.servlet.http.HttpServletResponse)
+2016-11-28 11:23:14,834 INFO [localhost-startStop-1] o.h.v.i.u.Version [Version.java:27] HV000001: Hibernate Validator 5.1.3.Final
+2016-11-28 11:23:15,099 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java:517] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Mon Nov 28 11:23:14 CET 2016]; parent: Root WebApplicationContext
+2016-11-28 11:23:15,130 INFO [localhost-startStop-1] o.s.w.s.m.m.a.RequestMappingHandlerAdapter [RequestMappingHandlerAdapter.java:517] Looking for @ControllerAdvice: WebApplicationContext for namespace 'dispatcherServlet-servlet': startup date [Mon Nov 28 11:23:14 CET 2016]; parent: Root WebApplicationContext
+2016-11-28 11:23:15,193 INFO [localhost-startStop-1] o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java:314] Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.ResourceHttpRequestHandler#0'
+2016-11-28 11:23:15,193 INFO [localhost-startStop-1] o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java:301] Root mapping to handler of type [class org.springframework.web.servlet.mvc.ParameterizableViewController]
+2016-11-28 11:23:15,193 INFO [localhost-startStop-1] o.s.w.s.h.SimpleUrlHandlerMapping [AbstractUrlHandlerMapping.java:314] Mapped URL path [/**] onto handler 'org.springframework.web.servlet.resource.DefaultServletHttpRequestHandler#0'
+2016-11-28 11:23:15,208 INFO [localhost-startStop-1] o.s.w.s.DispatcherServlet [FrameworkServlet.java:504] FrameworkServlet 'dispatcherServlet': initialization completed in 639 ms
