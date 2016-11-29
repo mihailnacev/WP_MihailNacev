@@ -2,7 +2,7 @@
   <div class="panel-heading">
     <h4>Add or update {{vm.title}}</h4>
   </div>
-  <form ng-submit="vm.save()" name="form">
+  <form ng-submit="vm.save()" name="form" method="post">
     <div class="panel-body">
       <wp-input wp-label="Name" wp-type="text" wp-model="vm.entity.name" wp-focus="true"></wp-input>
       <!--<div class="form-group">
@@ -27,7 +27,7 @@
           </ui-select-choices>
         </ui-select>
       </div>
-      <wp-input wp-label="Number of Terms" wp-type="number" wp-model="vm.entity.noTerms" wp-focus="false"></wp-input>
+      <wp-input wp-label="Number of Terms" wp-type="number" wp-model="vm.entity.capacity" wp-focus="false"></wp-input>
       <!--
       <div class="form-group">
         <label>Number of Terms</label>
@@ -83,7 +83,7 @@
       <tr ng-repeat="e in vm.entities| orderBy:vm.criterium :true| filter:vm.search">
         <td>{{e.name}}</td>
         <td>{{e.groupSize}}</td>
-        <td>{{e.noTerms}}</td>
+        <td>{{e.capacity}}</td>
         <td>
           <button class="btn btn-xs btn-default"
                   ng-click="vm.edit(e)">

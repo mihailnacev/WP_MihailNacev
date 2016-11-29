@@ -24,8 +24,12 @@ var JS_APP = [
   'app/AngularGemStore/store.controller.js',
   'app/AngularGemStore/store.state.js',
   'app/group/group.state.js',
-  'app/group/group.controller.js',
-  'app/group/group.local.factory.js',
+ // 'app/group/group.controller.js',
+  //'app/group/group.local.factory.js',
+
+  'app/group/group-controller-new.js',
+   'app/group/group-service-remote.js',
+
   'app/group/group.component.js',
   'app/group/focus-me.component.js',
   'app/default-page/default-page.state.js',

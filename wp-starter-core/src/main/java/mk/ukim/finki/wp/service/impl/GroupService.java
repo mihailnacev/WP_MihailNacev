@@ -3,26 +3,20 @@ package mk.ukim.finki.wp.service.impl;
 import mk.ukim.finki.wp.model.Group;
 import mk.ukim.finki.wp.service.IGroupService;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Created by Nacev on 28.11.2016.
  */
 @Service
 public class GroupService implements IGroupService {
-    static Map<Long,Group> idToGroup;
+    private static Map<Long,Group> idToGroup = new HashMap<Long, Group>();
 
     public List<Group> findAll() {
-        List<Group> list=new ArrayList<Group>();
-        Set<Long> keySet=idToGroup.keySet();
-        for (Long key: keySet){
-            list.add(idToGroup.get(key));
-        }
-        return list;
+
+        return new ArrayList<Group>(idToGroup.values());
     }
 
     public Group findById(Long id) {
@@ -30,7 +24,9 @@ public class GroupService implements IGroupService {
     }
 
     public void save(Group entity) {
-        idToGroup.put(entity.getId(),entity);
+        Long id=new Random().nextLong();
+        entity.setId(id);
+        idToGroup.put(id,entity);
     }
 
     public void update(Long id, Group entity) {

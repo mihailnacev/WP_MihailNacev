@@ -4,8 +4,8 @@ import mk.ukim.finki.wp.model.Group;
 import mk.ukim.finki.wp.service.impl.GroupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
+import java.util.Random;
 
 /**
  * Created by Nacev on 28.11.2016.
@@ -17,10 +17,13 @@ public class GroupController {
     GroupService service;
 
     @RequestMapping(method = RequestMethod.GET)
-    public List<Group> findAll(){
+    public @ResponseBody List<Group> findAll(){
         return service.findAll();
     }
-
+    @RequestMapping(method = RequestMethod.POST)
+    public void save(@RequestBody Group group){
+       service.save(group);
+    }
     @RequestMapping(value = "/{id}",method = RequestMethod.GET)
     public Group findById(@PathVariable Long id){
         return service.findById(id);
@@ -31,7 +34,7 @@ public class GroupController {
         service.update(id,group);
     }
 
-    @RequestMapping(value = "/{id}",method = RequestMethod.DELETE)
+    @RequestMapping(method = RequestMethod.DELETE, value = "/{id}")
     public void delete(@PathVariable Long id){
         service.delete(id);
     }
