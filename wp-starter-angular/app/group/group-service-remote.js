@@ -15,7 +15,7 @@
     var groupsList=[];
     var groupIdSequence=0;
 
-    return $resource('http://localhost:8080/api/groups/:id', {id: '@id'}, {
+    return $resource('http://localhost:8000/api/groups/:id', {id: '@id'}, {
       query: { method: "GET", isArray: true },
       create: { method: "POST"},
       get: { method: "GET"},

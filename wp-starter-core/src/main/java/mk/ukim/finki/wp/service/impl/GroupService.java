@@ -12,28 +12,29 @@ import java.util.*;
  */
 @Service
 public class GroupService implements IGroupService {
-    private static Map<Long,Group> idToGroup = new HashMap<Long, Group>();
+    private static Map<Integer,Group> idToGroup = new HashMap<Integer, Group>();
 
     public List<Group> findAll() {
 
         return new ArrayList<Group>(idToGroup.values());
     }
 
-    public Group findById(Long id) {
+    public Group findById(Integer id) {
         return idToGroup.get(id);
     }
 
     public void save(Group entity) {
-        Long id=new Random().nextLong();
+        Integer id=new Random().nextInt();
         entity.setId(id);
         idToGroup.put(id,entity);
     }
 
-    public void update(Long id, Group entity) {
+    public void update(Integer id, Group entity) {
+        idToGroup.remove(id);
         idToGroup.put(id,entity);
     }
 
-    public void delete(Long id) {
+    public void delete(Integer id) {
         idToGroup.remove(id);
     }
 }

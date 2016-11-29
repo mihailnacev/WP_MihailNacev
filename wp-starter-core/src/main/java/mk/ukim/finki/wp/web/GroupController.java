@@ -25,17 +25,17 @@ public class GroupController {
        service.save(group);
     }
     @RequestMapping(value = "/{id}",method = RequestMethod.GET)
-    public Group findById(@PathVariable Long id){
+    public Group findById(@PathVariable Integer id){
         return service.findById(id);
     }
 
     @RequestMapping(value = "/{id}",method = RequestMethod.PUT)
-    public void update(@PathVariable Long id, @RequestBody Group group){
+    public void update(@PathVariable Integer id, @RequestBody Group group){
         service.update(id,group);
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/{id}")
-    public void delete(@PathVariable Long id){
+    public void delete(@PathVariable Integer id){
         service.delete(id);
     }
 }

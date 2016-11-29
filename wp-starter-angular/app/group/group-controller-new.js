@@ -47,6 +47,8 @@
 
     function save() {
       var entity=vm.entity;
+      if(entity.id!=null) {editEntity(entity);
+      return;}
       GroupService.create(vm.entity ,function(){
         loadGroups();
         clear();
@@ -55,6 +57,11 @@
 
     function clear() {
       vm.entity = {};
+    }
+
+    function editEntity(entity){
+      GroupService.update({id: entity.id},entity);
+      loadGroups();
     }
 
     function edit(entity){
