@@ -32,8 +32,9 @@
 
 
     function getAllGroups() {
-      GroupService.getAll().then(function (data) {
-        vm.groups = data;
+      GroupService.query(function(data) {
+        // do something which you want with response
+        vm.groups=data;
       });
     }
 
