@@ -60,8 +60,9 @@
     }
 
     function editEntity(entity){
-      GroupService.update({id: entity.id},entity);
-      loadGroups();
+      GroupService.update({id: entity.id},entity,function () {
+        loadGroups();
+      });
     }
 
     function edit(entity){
@@ -70,8 +71,9 @@
     }
 
     function remove(entity) {
-      GroupService.remove({id: entity.id});
-      loadGroups();
+      GroupService.remove({id: entity.id},function () {
+        loadGroups();
+      });
     }
   }
 
