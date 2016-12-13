@@ -40,7 +40,11 @@ var JS_APP = [
 
   'app/courses/courses.controller.js',
   'app/courses/courses.service.js',
-  'app/courses/courses.state.js'
+  'app/courses/courses.state.js',
+
+  'app/students_new/students.controller.new.js',
+  'app/students_new/students.service.new.js',
+  'app/students_new/students.state.new.js'
 ];
 
 var TEMPLATES_SRC = [
@@ -48,7 +52,8 @@ var TEMPLATES_SRC = [
   'app/AngularGemStore/store.view.html',
   'app/default-page/default-page.view.html',
   'app/students/students.view.html',
-  'app/courses/courses.view.html'
+  'app/courses/courses.view.html',
+  'app/students_new/students.view.new.html'
 ];
 
 var FONTS_LIB= [

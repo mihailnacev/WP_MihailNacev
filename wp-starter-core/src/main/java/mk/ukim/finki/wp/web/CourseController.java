@@ -18,8 +18,7 @@ public class CourseController {
     CourseService service;
 
     @RequestMapping(method = RequestMethod.GET)
-    public @ResponseBody
-    List<Course> findAll(){
+    public @ResponseBody List<Course> findAll(){
         return service.findAll();
     }
     @RequestMapping(method = RequestMethod.POST)

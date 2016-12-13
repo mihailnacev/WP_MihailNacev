@@ -1,42 +1,40 @@
 /**
- * Created by 141142 on 12/13/2016.
+ * Created by Nacev on 13.12.2016.
  */
 (function (angular) {
   'use strict';
 
   angular
     .module('wp-angular-starter')
-    .controller('CoursesController', CoursesController);
+    .controller('StudentsControllerNew', StudentsControllerNew);
 
-  CoursesController.$inject = ['$log', 'CoursesService'];
+  StudentsControllerNew.$inject = ['$log', 'StudentsServiceNew'];
 
   /* @ngInject */
-  function CoursesController($log, CoursesService) {
+  function StudentsControllerNew($log, StudentsServiceNew) {
     var vm = this;
-    vm.title = 'Course';
+    vm.title = 'Student';
     vm.save = save;
     vm.clear = clear;
     vm.edit=edit;
     vm.remove= remove;
     vm.entity = {};
     vm.entities=[];
-    vm.courses=[];
-    loadCourses();
+    loadStudents();
 
-    function loadCourses(){
-      CoursesService.query(function(data) {
+    function loadStudents(){
+      StudentsServiceNew.query(function(data) {
         // do something which you want with response
         vm.entities=data;
-        vm.courses=data;
       });
     }
 
     function save() {
       var entity=vm.entity;
-      if(entity.id!=null) {editEntity(entity);
+      if(entity.index!=null) {editEntity(entity);
         return;}
-      CoursesService.create(vm.entity ,function(){
-        loadCourses();
+      StudentsServiceNew.create(vm.entity ,function(){
+        loadStudents();
         clear();
       });
     }
@@ -46,8 +44,8 @@
     }
 
     function editEntity(entity){
-     CoursesService.update({id: entity.id},entity,function () {
-        loadCourses();
+      StudentsServiceNew.update({id: entity.index},entity,function () {
+        loadStudents();
       });
     }
 
@@ -57,8 +55,8 @@
     }
 
     function remove(entity) {
-      CoursesService.remove({id: entity.id},function () {
-        loadCourses();
+     StudentsServiceNew.remove({id: entity.index},function () {
+        loadStudents();
       });
     }
   }
