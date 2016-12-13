@@ -36,14 +36,19 @@ var JS_APP = [
   'app/students/students.controller.js',
   'app/students/students.state.js',
   'app/students/students.local.factory.js',
-  'app/students/students.component.js'
+  'app/students/students.component.js',
+
+  'app/courses/courses.controller.js',
+  'app/courses/courses.service.js',
+  'app/courses/courses.state.js'
 ];
 
 var TEMPLATES_SRC = [
   'app/group/group.view.html',
   'app/AngularGemStore/store.view.html',
   'app/default-page/default-page.view.html',
-  'app/students/students.view.html'
+  'app/students/students.view.html',
+  'app/courses/courses.view.html'
 ];
 
 var FONTS_LIB= [
