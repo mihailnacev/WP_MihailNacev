@@ -94,12 +94,36 @@
                   ng-click="vm.remove(e)">
             Remove
           </button>
+          <button class="btn btn-xs btn-info"
+                  ng-click="vm.check(e)">
+            Show Students
+          </button>
         </td>
       </tr>
+    </table>
+    <table ng-show="vm.lista.length>0" class="table table-striped table-bordered table-condensed">
+      <thead>
+      <tr>
+        <th>Student Name</th>
+        <th>Student Surname</th>
+        <th>Student Index</th>
+        <th>Br.Studenti {{vm.lista.length}}</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="as in vm.lista">
+        <td>{{as.student.name}}</td>
+        <td>{{as.student.surname}}</td>
+        <td>{{as.student.index}}</td>
+      </tr>
+      </tbody>
     </table>
 
     <div class="panel panel-warning text-warning" ng-hide="vm.entities.length>0">
       There are no courses!
+    </div>
+    <div class="panel panel-warning text-warning" ng-hide="vm.lista.length>0">
+      There are no students associated to the selected course!
     </div>
   </div>
 </div>

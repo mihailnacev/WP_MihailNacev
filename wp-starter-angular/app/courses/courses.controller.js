@@ -8,10 +8,10 @@
     .module('wp-angular-starter')
     .controller('CoursesController', CoursesController);
 
-  CoursesController.$inject = ['$log', 'CoursesService'];
+  CoursesController.$inject = ['$log', 'CoursesService','StudentsCoursesService'];
 
   /* @ngInject */
-  function CoursesController($log, CoursesService) {
+  function CoursesController($log, CoursesService, StudentsCoursesService) {
     var vm = this;
     vm.title = 'Course';
     vm.save = save;
@@ -21,7 +21,11 @@
     vm.entity = {};
     vm.entities=[];
     vm.courses=[];
+    vm.associations=[];
+    vm.lista=[];
+    vm.check=check;
     loadCourses();
+    loadAssociations();
 
     function loadCourses(){
       CoursesService.query(function(data) {
@@ -31,12 +35,20 @@
       });
     }
 
+    function loadAssociations(){
+      StudentsCoursesService.query(function(data) {
+        // do something which you want with response
+        vm.associations=data;
+      });
+    }
+
     function save() {
       var entity=vm.entity;
       if(entity.id!=null) {editEntity(entity);
         return;}
       CoursesService.create(vm.entity ,function(){
         loadCourses();
+        loadAssociations();
         clear();
       });
     }
@@ -48,6 +60,7 @@
     function editEntity(entity){
      CoursesService.update({id: entity.id},entity,function () {
         loadCourses();
+       loadAssociations();
       });
     }
 
@@ -59,7 +72,18 @@
     function remove(entity) {
       CoursesService.remove({id: entity.id},function () {
         loadCourses();
+        loadAssociations();
       });
+    }
+
+    function check(entity) {
+      vm.lista=[];
+      loadAssociations();
+      vm.associations.forEach(function (element) {
+         if(element.course.name==entity.name){
+           vm.lista.push(element);
+         }
+      })
     }
   }
 
