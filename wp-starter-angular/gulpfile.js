@@ -44,7 +44,11 @@ var JS_APP = [
 
   'app/students_new/students.controller.new.js',
   'app/students_new/students.service.new.js',
-  'app/students_new/students.state.new.js'
+  'app/students_new/students.state.new.js',
+
+  'app/students_courses/students_courses.controller.js',
+  'app/students_courses/students_courses.service.js',
+  'app/students_courses/students_courses.state.js'
 ];
 
 var TEMPLATES_SRC = [
@@ -53,7 +57,8 @@ var TEMPLATES_SRC = [
   'app/default-page/default-page.view.html',
   'app/students/students.view.html',
   'app/courses/courses.view.html',
-  'app/students_new/students.view.new.html'
+  'app/students_new/students.view.new.html',
+  'app/students_courses/students_courses.view.html'
 ];
 
 var FONTS_LIB= [
